@@ -77,8 +77,14 @@ WSGI_APPLICATION = 'Proyecto_ReciclaCerca.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'ProyectoReciclaCerca',
+        'HOST': 'localhost\\SQLEXPRESS',  
+        'PORT': '', 
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            'extra_params': 'trusted_connection=yes',
+        },
     }
 }
 
