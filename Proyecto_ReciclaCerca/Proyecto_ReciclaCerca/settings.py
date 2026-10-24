@@ -70,11 +70,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'mssql',
         'NAME': 'ProyectoReciclaCerca',
-        'HOST': 'localhost\\SQLEXPRESS',  
-        'PORT': '', 
+        'HOST': 'localhost\\SQLEXPRESS',
+        'PORT': '',
         'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            'extra_params': 'trusted_connection=yes',
+            'python_driver': 'mssql_python',
+            'extra_params': 'trusted_connection=yes;TrustServerCertificate=yes',
         },
     }
 }
