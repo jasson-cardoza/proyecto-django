@@ -1,0 +1,12 @@
+{% extends 'inicio/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Registrar Nuevo Punto de Reciclaje</h2>
+    <form method="POST" class="card card-body shadow-sm mt-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success mt-2">Guardar Punto</button>
+    </form>
+</div>
+{% endblock %}

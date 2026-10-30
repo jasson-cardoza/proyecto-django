@@ -1,0 +1,26 @@
+{% extends 'inicio/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Catálogo de Materiales Aceptados</h2>
+</div>
+
+<div class="row">
+    {% for material in materiales %}
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-success">{{ material.nombre }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ material.get_categoria_display }}</h6>
+                <p class="card-text">{{ material.descripcion }}</p>
+                <span class="badge bg-primary">Puntos/kg: {{ material.puntos_por_kg }}</span>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">No hay materiales registrados por el momento.</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

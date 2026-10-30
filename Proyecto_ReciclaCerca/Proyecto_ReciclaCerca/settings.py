@@ -76,7 +76,18 @@ DATABASES = {
             'python_driver': 'mssql_python',
             'extra_params': 'trusted_connection=yes;TrustServerCertificate=yes',
         },
-    }
+    },
+
+    'segunda': {
+        'ENGINE': 'mssql',
+        'NAME': 'ProyectoReciclaCerca',
+        'HOST': 'localhost\\SQLEXPRESS01',
+        'PORT': '',
+        'OPTIONS': {
+            'python_driver': 'mssql_python',
+            'extra_params': 'trusted_connection=yes;TrustServerCertificate=yes',
+        },
+    },
 }
 
 
