@@ -70,7 +70,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'mssql',
         'NAME': 'ProyectoReciclaCerca',
-        'HOST': 'localhost\\SQLEXPRESS',
+        'HOST': 'localhost',
         'PORT': '',
         'OPTIONS': {
             'python_driver': 'mssql_python',
