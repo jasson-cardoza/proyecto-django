@@ -1,46 +1,49 @@
-{% extends 'base.html' %}
-
-{% block title %}Inicio | ReciclaCerca{% endblock %}
-
+{% extends 'base.html' %} {% block title %}Inicio | ReciclaCerca{% endblock %}
 {% block content %}
 <!-- Bienvenida -->
 <section class="hero text-center">
-    <div class="container">
-        <h1 class="display-5">Recicla cerca, cuida tu comunidad 🌎</h1>
-        <p class="lead my-4">Encuentra puntos de reciclaje cercanos y aprende a separar tus residuos.</p>
-        <a href="#" class="btn btn-claro btn-lg me-2">Ver puntos</a>
-        <a href="#" class="btn btn-outline-light btn-lg">Registrar punto</a>
-    </div>
+  <div class="container">
+    <h1 class="display-5">Recicla cerca, cuida tu comunidad 🌎</h1>
+    <p class="lead my-4">
+      Encuentra puntos de reciclaje cercanos y aprende a separar tus residuos.
+    </p>
+    <a href="#" class="btn btn-claro btn-lg me-2">Ver puntos</a>
+    <a href="#" class="btn btn-outline-light btn-lg">Registrar punto</a>
+  </div>
 </section>
 
 <!-- Tarjetas -->
 <section class="container my-5">
-    <h2 class="titulo-seccion">¿Qué puedes hacer?</h2>
-    <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card card-reciclaje h-100 text-center p-4">
-                <div class="icono-card">📍</div>
-                <h5>Consultar puntos</h5>
-                <p class="text-muted">Mira dónde puedes llevar plástico, vidrio, papel y más.</p>
-                <a href="#" class="btn btn-reciclaje mt-auto">Ver listado</a>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card card-reciclaje h-100 text-center p-4">
-                <div class="icono-card">➕</div>
-                <h5>Registrar información</h5>
-                <p class="text-muted">Agrega nuevos puntos de reciclaje a la comunidad.</p>
-                <a href="#" class="btn btn-reciclaje mt-auto">Registrar</a>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card card-reciclaje h-100 text-center p-4">
-                <div class="icono-card">📊</div>
-                <h5>Ver reportes</h5>
-                <p class="text-muted">Consulta estadísticas del material reciclado.</p>
-                <a href="#" class="btn btn-reciclaje mt-auto">Ver reportes</a>
-            </div>
-        </div>
+  <h2 class="titulo-seccion">¿Qué puedes hacer?</h2>
+  <div class="row g-4">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card card-reciclaje h-100 text-center p-4">
+        <div class="icono-card">📍</div>
+        <h5>Consultar puntos</h5>
+        <p class="text-muted">
+          Mira dónde puedes llevar plástico, vidrio, papel y más.
+        </p>
+        <a href="#" class="btn btn-reciclaje mt-auto">Ver listado</a>
+      </div>
     </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card card-reciclaje h-100 text-center p-4">
+        <div class="icono-card">➕</div>
+        <h5>Registrar información</h5>
+        <p class="text-muted">
+          Agrega nuevos puntos de reciclaje a la comunidad.
+        </p>
+        <a href="#" class="btn btn-reciclaje mt-auto">Registrar</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card card-reciclaje h-100 text-center p-4">
+        <div class="icono-card">📊</div>
+        <h5>Ver reportes</h5>
+        <p class="text-muted">Consulta estadísticas del material reciclado.</p>
+        <a href="#" class="btn btn-reciclaje mt-auto">Ver reportes</a>
+      </div>
+    </div>
+  </div>
 </section>
 {% endblock %}

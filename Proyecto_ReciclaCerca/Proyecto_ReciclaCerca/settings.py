@@ -66,29 +66,31 @@ WSGI_APPLICATION = 'Proyecto_ReciclaCerca.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
         'NAME': 'ProyectoReciclaCerca',
-        'HOST': 'localhost',
+        'HOST': 'localhost\\SQLEXPRESS',
         'PORT': '',
         'OPTIONS': {
-            'python_driver': 'mssql_python',
+            'driver': 'ODBC Driver 17 for SQL Server',
             'extra_params': 'trusted_connection=yes;TrustServerCertificate=yes',
         },
-    },
-
-    'segunda': {
-        'ENGINE': 'mssql',
-        'NAME': 'ProyectoReciclaCerca',
-        'HOST': 'localhost\\SQLEXPRESS01',
-        'PORT': '',
-        'OPTIONS': {
-            'python_driver': 'mssql_python',
-            'extra_params': 'trusted_connection=yes;TrustServerCertificate=yes',
-        },
-    },
+    }
 }
+
+    #'segunda': {
+     #   'ENGINE': 'mssql',
+      #  'NAME': 'ProyectoReciclaCerca',
+       # 'HOST': 'localhost\\SQLEXPRESS01',
+        #'PORT': '',
+        #'OPTIONS': {
+         #   'python_driver': 'mssql_python',
+          #  'extra_params': 'trusted_connection=yes;TrustServerCertificate=yes',
+        #},
+    #},
+#}
 
 
 # Password validation
