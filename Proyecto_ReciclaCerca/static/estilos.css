@@ -1,0 +1,136 @@
+:root {
+    --verde: #2E7D32;
+    --verde-oscuro: #1B5E20;
+    --verde-claro: #E8F5E9;
+    --acento: #8D6E63;
+    --texto: #2b2b2b;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eaeeea;
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar-reciclaje {
+    background-color: var(--verde);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+
+.navbar-reciclaje .navbar-brand {
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.navbar-reciclaje .nav-link {
+    color: #fff;
+    opacity: .9;
+}
+
+.navbar-reciclaje .nav-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Sección principal de inicio */
+.hero {
+    background: linear-gradient(135deg, var(--verde) 0%, #66BB6A 100%);
+    color: #fff;
+    padding: 80px 0;
+    border-radius: 0 0 40px 40px;
+}
+
+.hero h1 {
+    font-weight: 600;
+}
+
+/* Botones */
+.btn-reciclaje {
+    background-color: var(--verde);
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 20px;
+    border: none;
+}
+
+.btn-reciclaje:hover {
+    background-color: var(--verde-oscuro);
+    color: #fff;
+}
+
+.btn-claro {
+    background-color: #fff;
+    color: var(--verde);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-claro:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+}
+
+/* Tarjetas */
+.card-reciclaje {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.card-reciclaje:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+}
+
+.icono-card {
+    font-size: 2.5rem;
+    background: var(--verde-claro);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+/* Títulos de sección */
+.titulo-seccion {
+    color: var(--verde);
+    font-weight: 600;
+    border-left: 5px solid var(--verde);
+    padding-left: 12px;
+    margin-bottom: 1.5rem;
+}
+
+/* Tablas */
+.table-reciclaje thead {
+    background-color: var(--verde);
+    color: #fff;
+}
+
+.table-reciclaje tbody tr:hover {
+    background-color: var(--verde-claro);
+}
+
+/* Formularios */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 .2rem rgba(46, 125, 50, .2);
+}
+
+/* Pie de página */
+.footer-reciclaje {
+    background-color: var(--verde-oscuro);
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 40px;
+}
