@@ -1,0 +1,28 @@
+{% extends 'inicio/base.html' %}
+{% block title %}{{ punto.nombre }} | ReciclaCerca{% endblock %}
+
+{% block content %}
+<h2 class="titulo-seccion">{{ punto.nombre }}</h2>
+<div class="card card-body shadow-sm">
+  <dl class="row mb-0">
+    <dt class="col-sm-3">Departamento</dt><dd class="col-sm-9">{{ punto.departamento }}</dd>
+    <dt class="col-sm-3">Municipio</dt><dd class="col-sm-9">{{ punto.municipio }}</dd>
+    <dt class="col-sm-3">Dirección</dt><dd class="col-sm-9">{{ punto.direccion }}</dd>
+    <dt class="col-sm-3">Teléfono</dt><dd class="col-sm-9">{{ punto.telefono|default:"—" }}</dd>
+    <dt class="col-sm-3">Horario</dt><dd class="col-sm-9">{{ punto.horario|default:"—" }}</dd>
+    <dt class="col-sm-3">Materiales</dt>
+    <dd class="col-sm-9">
+      {% for m in punto.materiales_aceptados.all %}
+        <a class="badge bg-success text-decoration-none" href="{% url 'reciclaje:material_detail' m.pk %}">{{ m.nombre }}</a>
+      {% empty %}—{% endfor %}
+    </dd>
+  </dl>
+  <div class="mt-3 d-flex gap-2">
+    {% if user.is_staff %}
+    <a href="{% url 'reciclaje:punto_update' punto.pk %}" class="btn btn-reciclaje">Editar</a>
+    <a href="{% url 'reciclaje:punto_delete' punto.pk %}" class="btn btn-outline-danger">Eliminar</a>
+    {% endif %}
+    <a href="{% url 'reciclaje:punto_list' %}" class="btn btn-outline-secondary">Volver</a>
+  </div>
+</div>
+{% endblock %}

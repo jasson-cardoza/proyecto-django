@@ -134,3 +134,35 @@ main {
     padding: 20px 0;
     margin-top: 40px;
 }
+
+/* Formularios generados por Django ({{ field }} no trae clases de Bootstrap) */
+.form-reciclaje input[type="text"],
+.form-reciclaje input[type="number"],
+.form-reciclaje input[type="email"],
+.form-reciclaje input[type="password"],
+.form-reciclaje input[type="date"],
+.form-reciclaje select,
+.form-reciclaje textarea {
+    display: block;
+    width: 100%;
+    padding: .5rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: .375rem;
+    background-color: #fff;
+}
+
+.form-reciclaje input:focus,
+.form-reciclaje select:focus,
+.form-reciclaje textarea:focus {
+    outline: none;
+    border-color: var(--verde);
+    box-shadow: 0 0 0 .2rem rgba(46, 125, 50, .2);
+}
+
+.form-reciclaje select[multiple] {
+    min-height: 8rem;
+}
+
+.form-reciclaje input[type="checkbox"] {
+    margin-right: .4rem;
+}

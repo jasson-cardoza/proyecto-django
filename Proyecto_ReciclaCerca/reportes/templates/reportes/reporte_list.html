@@ -1,0 +1,30 @@
+{% extends 'inicio/base.html' %}
+{% block title %}Reportes | ReciclaCerca{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="titulo-seccion mb-0">Reportes ciudadanos</h2>
+  <a href="{% url 'reportes:reporte_create' %}" class="btn btn-reciclaje">+ Crear reporte</a>
+</div>
+
+<div class="list-group">
+  {% for reporte in reportes %}
+  <div class="list-group-item d-flex justify-content-between align-items-center mb-2 border rounded shadow-sm">
+    <div>
+      <h5 class="mb-1 text-success">
+        <a class="text-success text-decoration-none" href="{% url 'reportes:reporte_detail' reporte.pk %}">{{ reporte.titulo }}</a>
+      </h5>
+      <p class="mb-1 text-muted">{{ reporte.get_tipo_display }}{% if reporte.punto %} · {{ reporte.punto.nombre }}{% endif %}</p>
+      <small class="text-secondary">
+        {% if user.is_staff %}Por {{ reporte.perfil.usuario.username }} · {% endif %}
+        Fecha: {{ reporte.fecha_creacion|date:"d/m/Y" }}
+      </small>
+    </div>
+    <span class="badge {% if reporte.estado == 'resuelto' %}bg-success{% else %}bg-warning text-dark{% endif %} fs-6">{{ reporte.get_estado_display }}</span>
+  </div>
+  {% empty %}
+  <div class="alert alert-info">No se han enviado reportes aún.</div>
+  {% endfor %}
+</div>
+{% include 'inicio/_paginacion.html' %}
+{% endblock %}

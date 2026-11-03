@@ -1,0 +1,43 @@
+{% extends 'inicio/base.html' %}
+{% block title %}Puntos de reciclaje | ReciclaCerca{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="titulo-seccion mb-0">Puntos de reciclaje disponibles</h2>
+  {% if user.is_staff %}
+  <a href="{% url 'reciclaje:punto_create' %}" class="btn btn-reciclaje">+ Nuevo punto</a>
+  {% endif %}
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover table-reciclaje border">
+    <thead>
+      <tr><th>Nombre</th><th>Departamento</th><th>Municipio</th><th>Dirección</th><th>Materiales</th><th></th></tr>
+    </thead>
+    <tbody>
+      {% for punto in puntos %}
+      <tr>
+        <td>
+          <strong>{{ punto.nombre }}</strong>
+          {% if not punto.activo %}<span class="badge bg-secondary">Inactivo</span>{% endif %}
+        </td>
+        <td>{{ punto.departamento }}</td>
+        <td>{{ punto.municipio }}</td>
+        <td>{{ punto.direccion }}</td>
+        <td>{% for m in punto.materiales_aceptados.all %}<span class="badge bg-success">{{ m.nombre }}</span> {% empty %}—{% endfor %}</td>
+        <td class="text-end text-nowrap">
+          <a href="{% url 'reciclaje:punto_detail' punto.pk %}" class="btn btn-sm btn-outline-success">Ver</a>
+          {% if user.is_staff %}
+          <a href="{% url 'reciclaje:punto_update' punto.pk %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+          <a href="{% url 'reciclaje:punto_delete' punto.pk %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
+          {% endif %}
+        </td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="6" class="text-center text-muted">No hay puntos de reciclaje registrados.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% include 'inicio/_paginacion.html' %}
+{% endblock %}

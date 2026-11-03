@@ -1,0 +1,21 @@
+{% extends 'inicio/base.html' %}
+{% block title %}Registro de reciclaje | ReciclaCerca{% endblock %}
+
+{% block content %}
+<h2 class="titulo-seccion">Registro de reciclaje</h2>
+<div class="card card-body shadow-sm">
+  <dl class="row mb-0">
+    <dt class="col-sm-3">Fecha</dt><dd class="col-sm-9">{{ registro.fecha|date:"d/m/Y H:i" }}</dd>
+    <dt class="col-sm-3">Usuario</dt><dd class="col-sm-9">{{ registro.perfil.usuario.username }}</dd>
+    <dt class="col-sm-3">Punto</dt><dd class="col-sm-9"><a href="{% url 'reciclaje:punto_detail' registro.punto.pk %}">{{ registro.punto.nombre }}</a></dd>
+    <dt class="col-sm-3">Material</dt><dd class="col-sm-9"><a href="{% url 'reciclaje:material_detail' registro.material.pk %}">{{ registro.material.nombre }}</a></dd>
+    <dt class="col-sm-3">Cantidad</dt><dd class="col-sm-9">{{ registro.cantidad_kg }} kg</dd>
+    <dt class="col-sm-3">Puntos ganados</dt><dd class="col-sm-9"><span class="badge bg-success fs-6">{{ registro.puntos_ganados }}</span></dd>
+  </dl>
+  <div class="mt-3 d-flex gap-2">
+    <a href="{% url 'reciclaje:registro_update' registro.pk %}" class="btn btn-reciclaje">Editar</a>
+    <a href="{% url 'reciclaje:registro_delete' registro.pk %}" class="btn btn-outline-danger">Eliminar</a>
+    <a href="{% url 'reciclaje:registro_list' %}" class="btn btn-outline-secondary">Volver</a>
+  </div>
+</div>
+{% endblock %}

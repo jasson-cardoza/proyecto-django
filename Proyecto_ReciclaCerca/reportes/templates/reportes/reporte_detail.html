@@ -1,0 +1,49 @@
+{% extends 'inicio/base.html' %}
+{% block title %}{{ reporte.titulo }} | ReciclaCerca{% endblock %}
+
+{% block content %}
+<h2 class="titulo-seccion">{{ reporte.titulo }}</h2>
+
+<div class="card card-body shadow-sm mb-4">
+  <dl class="row mb-0">
+    <dt class="col-sm-3">Tipo</dt><dd class="col-sm-9">{{ reporte.get_tipo_display }}</dd>
+    <dt class="col-sm-3">Estado</dt>
+    <dd class="col-sm-9"><span class="badge {% if reporte.estado == 'resuelto' %}bg-success{% else %}bg-warning text-dark{% endif %}">{{ reporte.get_estado_display }}</span></dd>
+    <dt class="col-sm-3">Punto</dt>
+    <dd class="col-sm-9">{% if reporte.punto %}<a href="{% url 'reciclaje:punto_detail' reporte.punto.pk %}">{{ reporte.punto.nombre }}</a>{% else %}—{% endif %}</dd>
+    <dt class="col-sm-3">Enviado por</dt><dd class="col-sm-9">{{ reporte.perfil.usuario.username }}</dd>
+    <dt class="col-sm-3">Fecha</dt><dd class="col-sm-9">{{ reporte.fecha_creacion|date:"d/m/Y H:i" }}</dd>
+    {% if reporte.fecha_resolucion %}
+    <dt class="col-sm-3">Resuelto el</dt><dd class="col-sm-9">{{ reporte.fecha_resolucion|date:"d/m/Y H:i" }}</dd>
+    {% endif %}
+    <dt class="col-sm-3">Descripción</dt><dd class="col-sm-9">{{ reporte.descripcion|linebreaksbr }}</dd>
+  </dl>
+  <div class="mt-3 d-flex gap-2">
+    <a href="{% url 'reportes:reporte_update' reporte.pk %}" class="btn btn-reciclaje">Editar</a>
+    <a href="{% url 'reportes:reporte_delete' reporte.pk %}" class="btn btn-outline-danger">Eliminar</a>
+    <a href="{% url 'reportes:reporte_list' %}" class="btn btn-outline-secondary">Volver</a>
+  </div>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-2">
+  <h4 class="mb-0">Seguimiento</h4>
+  <a href="{% url 'reportes:seguimiento_create' reporte.pk %}" class="btn btn-reciclaje btn-sm">+ Agregar comentario</a>
+</div>
+{% for s in seguimientos %}
+<div class="card card-body shadow-sm mb-2">
+  <div class="d-flex justify-content-between">
+    <strong>{{ s.autor.usuario.username }}</strong>
+    <small class="text-muted">{{ s.fecha|date:"d/m/Y H:i" }}</small>
+  </div>
+  <p class="mb-1">{{ s.comentario|linebreaksbr }}</p>
+  {% if s.autor.usuario == user or user.is_staff %}
+  <div>
+    <a href="{% url 'reportes:seguimiento_update' s.pk %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+    <a href="{% url 'reportes:seguimiento_delete' s.pk %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
+  </div>
+  {% endif %}
+</div>
+{% empty %}
+<div class="alert alert-info">Aún no hay comentarios en este reporte.</div>
+{% endfor %}
+{% endblock %}

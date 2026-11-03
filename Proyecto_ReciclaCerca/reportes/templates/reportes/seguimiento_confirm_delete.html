@@ -1,0 +1,19 @@
+{% extends 'inicio/base.html' %}
+{% block title %}Eliminar comentario | ReciclaCerca{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <h2 class="titulo-seccion">Eliminar comentario</h2>
+    <form method="post" class="card card-body shadow-sm">
+      {% csrf_token %}
+      <p>¿Eliminar este comentario?</p>
+      <blockquote class="text-muted">{{ seguimiento.resumen }}</blockquote>
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+        <a href="{% url 'reportes:reporte_detail' reporte.pk %}" class="btn btn-outline-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
