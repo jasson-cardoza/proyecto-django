@@ -72,31 +72,43 @@ pip install -r requirements.txt
 
 ### 6. Configurar la base de datos
 
-Crear la base de datos de ReciclaCerca en SQL Server y configurar los datos de conexión en `settings.py`.
+Crear la base de datos de ReciclaCerca en SQL Server (el script está en `database/ProyectoReciclaCerca.sql`) y configurar los datos de conexión en `settings.py`.
 
 La configuración debe incluir el nombre de la base de datos, el servidor y el método de autenticación correspondiente.
 
 Las credenciales no deben publicarse en GitHub.
 
-### 7. Ejecutar las migraciones
+### 7. Variables de entorno (opcional en desarrollo)
 
-Los comandos de `manage.py` (este paso y los siguientes) se ejecutan dentro de la carpeta `Proyecto_ReciclaCerca/`:
+La clave secreta de Django no está en el código; se lee de la variable `DJANGO_SECRET_KEY`. Para desarrollo local no hace falta configurarla (se usa una clave de prueba). En producción es obligatoria y `DJANGO_DEBUG` debe ser `False`.
+
+Generar una clave:
 
 ```bash
-cd Proyecto_ReciclaCerca
+python -c "from django.core.management.utils import get_random_secret_key as k; print(k())"
 ```
+
+Definirla en PowerShell (solo para esa terminal):
+
+```powershell
+$env:DJANGO_SECRET_KEY = "pega-aqui-la-clave"
+```
+
+### 8. Ejecutar las migraciones
+
+Los comandos de `manage.py` se ejecutan en la raíz del repositorio (donde está `manage.py`):
 
 ```bash
 python manage.py migrate
 ```
 
-### 8. Comprobar la configuración de Django
+### 9. Comprobar la configuración de Django
 
 ```bash
 python manage.py check
 ```
 
-### 9. Iniciar el servidor
+### 10. Iniciar el servidor
 
 ```bash
 python manage.py runserver
@@ -106,86 +118,89 @@ Abrir en el navegador:
 
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
+### 11. (Opcional) Cargar datos de ejemplo
+
+Carga materiales, puntos de reciclaje de Chalatenango (El Salvador), usuarios de prueba, registros y reportes:
+
+```bash
+python manage.py cargar_datos_ejemplo
+```
+
+Para borrar los datos de ejemplo y cargarlos de nuevo: `python manage.py cargar_datos_ejemplo --reiniciar`.
+Los usuarios de prueba (`ana_martinez`, `carlos_hernandez`, `maria_rivas`, `ecochalate_sv`) usan la contraseña `Reciclar2026`.
+El administrador se crea con `python manage.py createsuperuser`.
+
 ## Estructura del proyecto
 
-El proyecto sigue la arquitectura estándar de Django: un **proyecto de configuración** (`Proyecto_ReciclaCerca`) y varias **aplicaciones**, cada una con una única responsabilidad. Cada aplicación es dueña de sus modelos, vistas, plantillas y rutas (`urls.py`); el `urls.py` del proyecto solo las enlaza.
+El proyecto sigue la arquitectura estándar de Django: un **paquete de configuración** (`config/`) y varias **aplicaciones**, cada una con una única responsabilidad. Cada aplicación es dueña de sus modelos, vistas, plantillas y rutas (`urls.py`); el `urls.py` de `config/` solo las enlaza.
 
 ### Árbol de carpetas y archivos
 
 ```text
-Proyecto_POO/                         # Raíz del repositorio (se llama proyecto-django/ al clonarlo)
-├── .gitignore                        # Archivos ignorados por Git (__pycache__/, *.pyc)
+proyecto-django/                      # Raíz del repositorio (aquí está manage.py)
+├── manage.py                         # Utilidad de línea de comandos de Django
 ├── README.md                         # Documentación principal
 ├── requirements.txt                  # Dependencias de Python
-└── Proyecto_ReciclaCerca/            # Carpeta del proyecto Django (aquí está manage.py)
-    ├── manage.py                     # Utilidad de línea de comandos de Django
-    │
-    ├── Proyecto_ReciclaCerca/        # Paquete de configuración del proyecto
-    │   ├── __init__.py
-    │   ├── settings.py               # Configuración: apps instaladas, base de datos, idioma...
-    │   ├── urls.py                   # Rutas raíz: enlaza las rutas de cada aplicación
-    │   ├── asgi.py                   # Punto de entrada ASGI
-    │   ├── wsgi.py                   # Punto de entrada WSGI
-    │   └── ProyectoReciclaCerca.sql  # Script SQL que crea la base de datos en SQL Server
-    │
-    ├── inicio/                       # App: páginas públicas (portada e información general)
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── models.py
-    │   ├── tests.py
-    │   ├── urls.py
-    │   ├── views.py
-    │   ├── migrations/
-    │   │   └── __init__.py
-    │   └── templates/
-    │       └── inicio/
-    │           └── Plantilla.html    # Portada del sitio
-    │
-    ├── usuarios/                     # App: cuentas, autenticación, perfiles y roles
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── models.py
-    │   ├── tests.py
-    │   ├── urls.py
-    │   ├── views.py
-    │   └── migrations/
-    │       └── __init__.py
-    │
-    ├── reciclaje/                    # App: dominio principal (materiales, puntos y registros de reciclaje)
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── models.py
-    │   ├── tests.py
-    │   ├── urls.py
-    │   ├── views.py
-    │   └── migrations/
-    │       └── __init__.py
-    │
-    └── reportes/                     # App: estadísticas y reportes (solo lectura)
-        ├── __init__.py
-        ├── admin.py
-        ├── apps.py
-        ├── models.py
-        ├── tests.py
-        ├── urls.py
-        ├── views.py
-        └── migrations/
-            └── __init__.py
+├── .gitignore                        # Archivos ignorados por Git
+│
+├── config/                           # Configuración del proyecto
+│   ├── settings.py                   # Apps instaladas, base de datos, plantillas, estáticos...
+│   ├── urls.py                       # Rutas raíz: enlaza las rutas de cada aplicación
+│   ├── asgi.py                       # Punto de entrada ASGI
+│   └── wsgi.py                       # Punto de entrada WSGI
+│
+├── database/
+│   └── ProyectoReciclaCerca.sql      # Script SQL que crea la base de datos en SQL Server
+│
+├── static/                           # Archivos estáticos compartidos
+│   └── css/
+│       └── estilos.css               # Estilos propios (se cargan después de Bootstrap)
+│
+├── templates/                        # Plantillas compartidas por todas las apps
+│   ├── base.html                     # Estructura común: navbar, mensajes y pie de página
+│   └── includes/
+│       ├── campos.html               # Pinta los campos de un formulario
+│       └── paginacion.html           # Controles de paginación de las listas
+│
+├── inicio/                           # App: portada
+│   ├── apps.py, urls.py, views.py, tests.py
+│   └── templates/inicio/inicio.html
+│
+├── usuarios/                         # App: cuentas, inicio de sesión, perfiles y direcciones
+│   ├── admin.py, apps.py, forms.py, models.py, tests.py, urls.py, views.py
+│   ├── mixins.py                     # Permisos compartidos (solo staff, solo mis datos, perfil requerido)
+│   ├── migrations/
+│   └── templates/usuarios/           # login, perfil_*, direccion_*
+│
+├── reciclaje/                        # App: materiales, puntos de reciclaje y registros
+│   ├── admin.py, apps.py, models.py, tests.py, urls.py, views.py
+│   ├── utils.py                      # Funciones auxiliares (también las usa reportes)
+│   ├── migrations/
+│   ├── management/commands/
+│   │   └── cargar_datos_ejemplo.py   # Comando para cargar datos de ejemplo
+│   └── templates/reciclaje/          # material_*, punto_*, registro_*
+│
+└── reportes/                         # App: reportes ciudadanos y su seguimiento
+    ├── admin.py, apps.py, models.py, tests.py, urls.py, views.py
+    ├── migrations/
+    └── templates/reportes/           # reporte_*, seguimiento_*
 ```
 
-> El entorno virtual (`venv/` o `env/`) vive en la raíz solo en tu máquina y no se versiona.
+> El entorno virtual (`venv/` o `.venv/`) vive en la raíz solo en tu máquina y no se versiona.
+
+### Dónde va cada plantilla
+
+- Lo que usan **todas** las páginas (`base.html` y los fragmentos de `includes/`) está en `templates/` y se carga con `{% extends 'base.html' %}` o `{% include 'includes/campos.html' %}`.
+- Lo que es de **una sola app** está en `<app>/templates/<app>/` (por ejemplo `reciclaje/templates/reciclaje/material_list.html`). Las vistas lo indican con `template_name`.
 
 ### Responsabilidad de cada aplicación
 
 | Aplicación | Responsabilidad | Ruta base |
 | --- | --- | --- |
-| `inicio` | Páginas públicas: portada e información general sobre reciclaje. | `/` |
-| `usuarios` | Cuentas de usuario: registro, inicio y cierre de sesión, perfiles y roles. | `/usuarios/` |
-| `reciclaje` | Dominio principal: materiales, puntos de reciclaje y registros de reciclaje. | `/reciclaje/` |
-| `reportes` | Estadísticas y reportes sobre lo reciclado. Solo lee datos; no define los suyos. | `/reportes/` |
+| `inicio` | Portada del sitio. | `/` |
+| `usuarios` | Registro, inicio y cierre de sesión, perfiles y direcciones. | `/usuarios/` |
+| `reciclaje` | Materiales, puntos de reciclaje y registros de reciclaje (con sus puntos). | `/reciclaje/` |
+| `reportes` | Reportes ciudadanos (punto lleno, contenedor dañado...) y sus comentarios de seguimiento. | `/reportes/` |
 
 ### Dependencias entre aplicaciones
 
@@ -196,9 +211,11 @@ Las dependencias van en un solo sentido, para evitar importaciones circulares:
 | `inicio` | Ninguna |
 | `usuarios` | `django.contrib.auth` |
 | `reciclaje` | `usuarios` |
-| `reportes` | `reciclaje` y `usuarios` (solo para leer datos) |
+| `reportes` | `reciclaje` y `usuarios` |
 
 Por ejemplo, `reciclaje` puede importar de `usuarios`, pero `usuarios` nunca importa de `reciclaje` ni de `reportes`.
+
+Lo que comparten varias apps vive en archivos propios, no en las vistas: los permisos en `usuarios/mixins.py` y las funciones auxiliares de reciclaje en `reciclaje/utils.py`.
 
 ### Archivos estándar de cada aplicación
 
@@ -211,21 +228,18 @@ Por ejemplo, `reciclaje` puede importar de `usuarios`, pero `usuarios` nunca imp
 | `apps.py` | Configuración de la app: nombre, nombre visible y su responsabilidad. |
 | `tests.py` | Pruebas automáticas. |
 | `migrations/` | Historial de cambios de los modelos sobre la base de datos (se genera con `makemigrations`). |
-| `templates/<app>/` | Plantillas HTML de la app. Se crea cuando la app las necesita. |
+| `templates/<app>/` | Plantillas HTML de la app. |
 
-### Estado actual
-
-- `usuarios`, `reciclaje` y `reportes` están creadas y registradas en `INSTALLED_APPS`, pero todavía no tienen modelos, vistas ni plantillas. Mientras tanto, sus URLs (`/usuarios/`, `/reciclaje/`, `/reportes/`) responden 404.
-- Los usuarios usan por ahora el modelo `User` que incluye Django. Si el equipo decide crear un modelo de usuario propio (`AUTH_USER_MODEL`), debe hacerse **antes de ejecutar `migrate` por primera vez**: cambiarlo después es muy complicado y normalmente obliga a recrear la base de datos.
+`inicio` no define modelos, por eso no tiene `models.py`, `admin.py` ni `migrations/`.
 
 ### Cómo agregar una nueva aplicación
 
-Desde `Proyecto_ReciclaCerca/` (la carpeta donde está `manage.py`):
+Desde la raíz del repositorio (donde está `manage.py`):
 
 1. Crearla: `python manage.py startapp nombre`.
 2. Crear `nombre/urls.py` con `app_name = 'nombre'` y una lista `urlpatterns`.
-3. Agregar `'nombre'` a `INSTALLED_APPS` en `Proyecto_ReciclaCerca/settings.py`.
-4. Enlazarla en `Proyecto_ReciclaCerca/urls.py` con `path('nombre/', include('nombre.urls'))`.
+3. Agregar `'nombre'` a `INSTALLED_APPS` en `config/settings.py`.
+4. Enlazarla en `config/urls.py` con `path('nombre/', include('nombre.urls'))`.
 5. Documentar su responsabilidad en su `apps.py` y en esta sección.
 
 ## Integrantes

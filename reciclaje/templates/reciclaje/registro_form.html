@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{% if registro %}Editar{% else %}Nuevo{% endif %} registro | ReciclaCerca{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <h2 class="titulo-seccion">{% if registro %}Editar registro{% else %}Registrar mi reciclaje{% endif %}</h2>
+    <form method="post" class="card card-body shadow-sm form-reciclaje">
+      {% csrf_token %}
+      {% include 'includes/campos.html' %}
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-reciclaje">Guardar registro</button>
+        <a href="{% url 'reciclaje:registro_list' %}" class="btn btn-outline-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

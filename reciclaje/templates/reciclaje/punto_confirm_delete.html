@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Eliminar punto | ReciclaCerca{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <h2 class="titulo-seccion">Eliminar punto de reciclaje</h2>
+    <form method="post" class="card card-body shadow-sm">
+      {% csrf_token %}
+      <p>¿Eliminar el punto <strong>{{ punto.nombre }}</strong>?</p>
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+        <a href="{% url 'reciclaje:punto_list' %}" class="btn btn-outline-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

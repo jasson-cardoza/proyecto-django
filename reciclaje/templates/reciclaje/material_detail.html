@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{ material.nombre }} | ReciclaCerca{% endblock %}
+
+{% block content %}
+<h2 class="titulo-seccion">{{ material.nombre }}</h2>
+<div class="card card-body shadow-sm">
+  <dl class="row mb-0">
+    <dt class="col-sm-3">Categoría</dt><dd class="col-sm-9">{{ material.get_categoria_display }}</dd>
+    <dt class="col-sm-3">Descripción</dt><dd class="col-sm-9">{{ material.descripcion|default:"—" }}</dd>
+    <dt class="col-sm-3">Puntos por kg</dt><dd class="col-sm-9">{{ material.puntos_por_kg }}</dd>
+    <dt class="col-sm-3">Se recibe en</dt>
+    <dd class="col-sm-9">
+      {% for punto in material.puntos.all %}
+        {% if punto.activo %}<a href="{% url 'reciclaje:punto_detail' punto.pk %}">{{ punto.nombre }}</a>{% if not forloop.last %}, {% endif %}{% endif %}
+      {% empty %}—{% endfor %}
+    </dd>
+  </dl>
+  <div class="mt-3 d-flex gap-2">
+    {% if user.is_staff %}
+    <a href="{% url 'reciclaje:material_update' material.pk %}" class="btn btn-reciclaje">Editar</a>
+    <a href="{% url 'reciclaje:material_delete' material.pk %}" class="btn btn-outline-danger">Eliminar</a>
+    {% endif %}
+    <a href="{% url 'reciclaje:material_list' %}" class="btn btn-outline-secondary">Volver</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}ReciclaCerca{% endblock %}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tu CSS (siempre después de Bootstrap). El archivo está en static/css/estilos.css -->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
+  </head>
+
+  <body class="d-flex flex-column min-vh-100 bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="{% url 'inicio:inicio' %}">🌱 ReciclaCerca</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          {# ns = app actual (inicio, reciclaje...), nombre = nombre de la ruta actual #}
+          {% with ns=request.resolver_match.namespace nombre=request.resolver_match.url_name %}
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {% if ns == 'inicio' %}active{% endif %}"
+                 href="{% url 'inicio:inicio' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if ns == 'reciclaje' and 'material' in nombre %}active{% endif %}"
+                 href="{% url 'reciclaje:material_list' %}">Materiales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if ns == 'reciclaje' and 'punto' in nombre %}active{% endif %}"
+                 href="{% url 'reciclaje:punto_list' %}">Puntos de Reciclaje</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link {% if ns == 'reciclaje' and 'registro' in nombre %}active{% endif %}"
+                 href="{% url 'reciclaje:registro_list' %}">Mis registros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if ns == 'reportes' %}active{% endif %}"
+                 href="{% url 'reportes:reporte_list' %}">Reportes</a>
+            </li>
+            {% endif %}
+          </ul>
+
+          <div class="d-flex align-items-center gap-2">
+            {% if user.is_authenticated %}
+            <div class="dropdown">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                👤 {{ user.username }}
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="{% url 'usuarios:perfil_mio' %}">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="{% url 'usuarios:direccion_list' %}">Mis direcciones</a></li>
+                {% if user.is_staff %}
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="{% url 'usuarios:perfil_list' %}">Todos los perfiles</a></li>
+                <li><a class="dropdown-item" href="{% url 'admin:index' %}">Panel Admin</a></li>
+                {% endif %}
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  {# Cerrar sesión debe ser POST (Django no permite GET) #}
+                  <form method="post" action="{% url 'usuarios:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="dropdown-item">Cerrar sesión</button>
+                  </form>
+                </li>
+              </ul>
+            </div>
+            {% else %}
+            <a href="{% url 'usuarios:login' %}" class="btn btn-outline-light btn-sm">Iniciar sesión</a>
+            <a href="{% url 'usuarios:perfil_registro' %}" class="btn btn-claro btn-sm">Registrarse</a>
+            {% endif %}
+          </div>
+          {% endwith %}
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mensajes del sistema -->
+    {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+      <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <main class="container my-4 flex-grow-1">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+      <div class="container">
+        <p class="mb-0 small">
+          © 2026 Proyecto ReciclaCerca — Proyección Social
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
