@@ -161,6 +161,7 @@ USE_TZ = True
 # --- Archivos estáticos (CSS, JS, imágenes) ----------------------------------
 # Nuestros archivos están en static/ (ej. static/css/estilos.css).
 STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
