@@ -185,3 +185,13 @@ STORAGES = {
 # En desarrollo los correos se imprimen en la consola.
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+if EN_RENDER:
+    if not os.environ.get("DATABASE_URL"):
+        raise ImproperlyConfigured("DATABASE_URL no está definida en Render.")
+    DATABASES = {
+        'default': dj_database_url.config(
+            env='DATABASE_URL',
+            conn_max_age=600,
+        )
+    }
