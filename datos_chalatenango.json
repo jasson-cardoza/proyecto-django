@@ -1,0 +1,1068 @@
+[
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$iVbf9K0SjmhMbpt6IGUInq$3HtIfvVgdCDRH/ST5/MxPb+EpLC8N0dapI5igi+/n9Q=",
+      "is_superuser": false,
+      "username": "moderador_chalate",
+      "first_name": "Equipo",
+      "last_name": "ReciclaCerca",
+      "email": "equipo.reciclacerca@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-08-28T09:00:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$vcR2uzQ35KkGSl7kdd9Kv8$Qxs+MOovT9RsrnL5d63htg2gxfxZ8uf8W/4RlETbbTI=",
+      "is_superuser": false,
+      "username": "ana_martinez",
+      "first_name": "Ana Lucía",
+      "last_name": "Martínez Rivera",
+      "email": "ana.martinez@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-01T08:40:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$HmiKc9ThFHkwUAbokf9gCF$TeA3wV7+2ZlqMmMvGIPv7P6ao11o5DFpraz9l8Z7vZo=",
+      "is_superuser": false,
+      "username": "carlos_hernandez",
+      "first_name": "Carlos Alberto",
+      "last_name": "Hernández Portillo",
+      "email": "carlos.hernandez@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-05T14:12:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$ZfAERgDOXX7aOKqpYr9d94$yAyFvx777fw2AFbMjQU9A3AfMV3RznPrGr1IRbFkQ/A=",
+      "is_superuser": false,
+      "username": "maria_rivas",
+      "first_name": "María Elena",
+      "last_name": "Rivas Argueta",
+      "email": "maria.rivas@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-08T09:03:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$GounGABKBGroj3YmBMCgeM$jhZDGmna2bjxjeB8FRXGs5IBnRMUMAgxyas7MJ0LmOw=",
+      "is_superuser": false,
+      "username": "ecochalate_sv",
+      "first_name": "EcoChalate",
+      "last_name": "S.A. de C.V.",
+      "email": "contacto.ecochalate@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-10T11:30:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$CeVEZqzhIlt2el2koaGLVX$BT7uzMH4QnffLJi4JCZ3j7ufe/qZtL3LdjRImHVJbQw=",
+      "is_superuser": false,
+      "username": "jose_alvarenga",
+      "first_name": "José Mauricio",
+      "last_name": "Alvarenga Henríquez",
+      "email": "jose.alvarenga@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-15T07:55:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$rPMhPmp0mG8qToUFtXok7o$yEjOZnhr1W9Y/UdPV2v7Vj6fBIEknDCfZ0CsHf99fXg=",
+      "is_superuser": false,
+      "username": "karla_guardado",
+      "first_name": "Karla Beatriz",
+      "last_name": "Guardado Mejía",
+      "email": "karla.guardado@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-22T16:20:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$kOxbIGEwIx6pI2FlaxGPj8$MJzW783zSradue89OHbWDnY3XeLaYq8vV5j/LONe2Fs=",
+      "is_superuser": false,
+      "username": "wilfredo_castillo",
+      "first_name": "Wilfredo Antonio",
+      "last_name": "Castillo Chicas",
+      "email": "wilfredo.castillo@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-09-25T13:05:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$XcCSZemuTCa5dkoFF1ndqz$m2N9NLOFU+ZvQZY6IbMjb1sOtTIjpRvDo79gVDCRcqE=",
+      "is_superuser": false,
+      "username": "cooperativa_citala",
+      "first_name": "Cooperativa Verde",
+      "last_name": "Citalá de R.L.",
+      "email": "contacto.coopverde@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-10-01T10:10:00-06:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$TpNx1nQv3gQ7PHQrHOKnbD$EGvqcFmQfYCWgcQRWg471a05zMm/SU+MmWqnMw/Lc/A=",
+      "is_superuser": false,
+      "username": "daniela_menjivar",
+      "first_name": "Daniela Stefany",
+      "last_name": "Menjívar Orellana",
+      "email": "daniela.menjivar@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-10-12T18:45:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 1,
+    "fields": {
+      "usuario": [
+        "moderador_chalate"
+      ],
+      "telefono": "2301-5520",
+      "fecha_nacimiento": null,
+      "tipo_usuario": "ciudadano",
+      "puntos": 0,
+      "fecha_registro": "2026-08-28T09:00:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 2,
+    "fields": {
+      "usuario": [
+        "ana_martinez"
+      ],
+      "telefono": "7412-3086",
+      "fecha_nacimiento": "1994-03-18",
+      "tipo_usuario": "ciudadano",
+      "puntos": 120,
+      "fecha_registro": "2026-09-01T08:40:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 3,
+    "fields": {
+      "usuario": [
+        "carlos_hernandez"
+      ],
+      "telefono": "7198-4425",
+      "fecha_nacimiento": "1988-07-02",
+      "tipo_usuario": "ciudadano",
+      "puntos": 100,
+      "fecha_registro": "2026-09-05T14:12:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 4,
+    "fields": {
+      "usuario": [
+        "maria_rivas"
+      ],
+      "telefono": "7650-2913",
+      "fecha_nacimiento": "1979-11-25",
+      "tipo_usuario": "ciudadano",
+      "puntos": 110,
+      "fecha_registro": "2026-09-08T09:03:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 5,
+    "fields": {
+      "usuario": [
+        "ecochalate_sv"
+      ],
+      "telefono": "2301-7741",
+      "fecha_nacimiento": null,
+      "tipo_usuario": "empresa",
+      "puntos": 420,
+      "fecha_registro": "2026-09-10T11:30:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 6,
+    "fields": {
+      "usuario": [
+        "jose_alvarenga"
+      ],
+      "telefono": "7863-5207",
+      "fecha_nacimiento": "1985-01-30",
+      "tipo_usuario": "recolector",
+      "puntos": 535,
+      "fecha_registro": "2026-09-15T07:55:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 7,
+    "fields": {
+      "usuario": [
+        "karla_guardado"
+      ],
+      "telefono": "6129-7740",
+      "fecha_nacimiento": "2001-09-09",
+      "tipo_usuario": "ciudadano",
+      "puntos": 37,
+      "fecha_registro": "2026-09-22T16:20:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 8,
+    "fields": {
+      "usuario": [
+        "wilfredo_castillo"
+      ],
+      "telefono": "7356-0182",
+      "fecha_nacimiento": "1972-05-14",
+      "tipo_usuario": "recolector",
+      "puntos": 342,
+      "fecha_registro": "2026-09-25T13:05:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 9,
+    "fields": {
+      "usuario": [
+        "cooperativa_citala"
+      ],
+      "telefono": "2335-6618",
+      "fecha_nacimiento": null,
+      "tipo_usuario": "empresa",
+      "puntos": 480,
+      "fecha_registro": "2026-10-01T10:10:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.perfil",
+    "pk": 10,
+    "fields": {
+      "usuario": [
+        "daniela_menjivar"
+      ],
+      "telefono": "7089-6634",
+      "fecha_nacimiento": "1998-12-03",
+      "tipo_usuario": "ciudadano",
+      "puntos": 0,
+      "fecha_registro": "2026-10-12T18:45:00-06:00"
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 1,
+    "fields": {
+      "perfil": 1,
+      "departamento": "Chalatenango",
+      "municipio": "Chalatenango",
+      "detalle": "Oficina ReciclaCerca, 1.ª Calle Oriente, local 2, Barrio El Centro",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 2,
+    "fields": {
+      "perfil": 2,
+      "departamento": "Chalatenango",
+      "municipio": "Chalatenango",
+      "detalle": "Barrio El Calvario, 2.ª Calle Oriente, casa #14",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 3,
+    "fields": {
+      "perfil": 3,
+      "departamento": "Chalatenango",
+      "municipio": "La Palma",
+      "detalle": "Colonia San Antonio, Pasaje 3, casa #7",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 4,
+    "fields": {
+      "perfil": 4,
+      "departamento": "Chalatenango",
+      "municipio": "Nueva Concepción",
+      "detalle": "Barrio San José, 4.ª Avenida Sur, casa #22",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 5,
+    "fields": {
+      "perfil": 5,
+      "departamento": "Chalatenango",
+      "municipio": "Chalatenango",
+      "detalle": "Final 3.ª Avenida Norte, bodega #3, Barrio San Antonio",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 6,
+    "fields": {
+      "perfil": 6,
+      "departamento": "Chalatenango",
+      "municipio": "Tejutla",
+      "detalle": "Barrio El Centro, Calle Principal, casa #5",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 7,
+    "fields": {
+      "perfil": 7,
+      "departamento": "Chalatenango",
+      "municipio": "Dulce Nombre de María",
+      "detalle": "Barrio Concepción, 1.ª Calle Poniente, casa #9",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 8,
+    "fields": {
+      "perfil": 8,
+      "departamento": "Chalatenango",
+      "municipio": "Chalatenango",
+      "detalle": "Colonia Las Flores, Polígono B, casa #18",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 9,
+    "fields": {
+      "perfil": 9,
+      "departamento": "Chalatenango",
+      "municipio": "Citalá",
+      "detalle": "Barrio Concepción, contiguo a la iglesia, local #1",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "usuarios.direccion",
+    "pk": 10,
+    "fields": {
+      "perfil": 10,
+      "departamento": "Chalatenango",
+      "municipio": "San Ignacio",
+      "detalle": "Barrio San Antonio, Calle al Río, casa #3",
+      "es_principal": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 1,
+    "fields": {
+      "nombre": "Botella PET",
+      "categoria": "plastico",
+      "descripcion": "Botellas de agua y gaseosa, limpias y sin tapa.",
+      "puntos_por_kg": 15,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 2,
+    "fields": {
+      "nombre": "Envase HDPE",
+      "categoria": "plastico",
+      "descripcion": "Envases de detergente, champú y galones de leche.",
+      "puntos_por_kg": 12,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 3,
+    "fields": {
+      "nombre": "Cartón corrugado",
+      "categoria": "papel",
+      "descripcion": "Cajas de cartón limpias, secas y aplanadas.",
+      "puntos_por_kg": 8,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 4,
+    "fields": {
+      "nombre": "Papel y periódico",
+      "categoria": "papel",
+      "descripcion": "Periódicos, revistas, cuadernos y papel de oficina.",
+      "puntos_por_kg": 5,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 5,
+    "fields": {
+      "nombre": "Vidrio transparente",
+      "categoria": "vidrio",
+      "descripcion": "Botellas y frascos de vidrio transparente, sin tapa.",
+      "puntos_por_kg": 6,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 6,
+    "fields": {
+      "nombre": "Vidrio ámbar y verde",
+      "categoria": "vidrio",
+      "descripcion": "Botellas de cerveza y de vidrio color ámbar o verde.",
+      "puntos_por_kg": 6,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 7,
+    "fields": {
+      "nombre": "Lata de aluminio",
+      "categoria": "metal",
+      "descripcion": "Latas de bebida y de conserva de aluminio.",
+      "puntos_por_kg": 40,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 8,
+    "fields": {
+      "nombre": "Chatarra de hierro",
+      "categoria": "metal",
+      "descripcion": "Piezas de hierro, láminas y herramientas en desuso.",
+      "puntos_por_kg": 10,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 9,
+    "fields": {
+      "nombre": "Residuos electrónicos",
+      "categoria": "electronico",
+      "descripcion": "Celulares, cargadores, cables y baterías de dispositivos.",
+      "puntos_por_kg": 50,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.material",
+    "pk": 10,
+    "fields": {
+      "nombre": "Pulpa y cáscara de café",
+      "categoria": "organico",
+      "descripcion": "Residuos del beneficiado del café, aptos para compostaje.",
+      "puntos_por_kg": 4,
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 1,
+    "fields": {
+      "nombre": "Centro de Acopio Chalate Verde",
+      "departamento": "Chalatenango",
+      "municipio": "Chalatenango",
+      "direccion": "3.ª Calle Poniente y 2.ª Avenida Sur, Barrio San Antonio",
+      "telefono": "2301-5518",
+      "horario": "Lun a Vie 7:00 a. m. - 4:00 p. m.; Sáb 8:00 a. m. - 12:00 m.",
+      "materiales_aceptados": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 2,
+    "fields": {
+      "nombre": "EcoPunto Mercado Municipal",
+      "departamento": "Chalatenango",
+      "municipio": "Chalatenango",
+      "direccion": "Costado norte del Mercado Municipal, Barrio El Calvario",
+      "telefono": "2301-5532",
+      "horario": "Lun a Sáb 6:00 a. m. - 2:00 p. m.",
+      "materiales_aceptados": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 3,
+    "fields": {
+      "nombre": "Punto Limpio La Palma",
+      "departamento": "Chalatenango",
+      "municipio": "La Palma",
+      "direccion": "Calle hacia San Ignacio, Barrio El Calvario",
+      "telefono": "2335-8841",
+      "horario": "Lun a Vie 8:00 a. m. - 4:00 p. m.",
+      "materiales_aceptados": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 4,
+    "fields": {
+      "nombre": "Acopio Cooperativa Verde Citalá",
+      "departamento": "Chalatenango",
+      "municipio": "Citalá",
+      "direccion": "Barrio Concepción, contiguo a la iglesia",
+      "telefono": "2335-6670",
+      "horario": "Mar a Sáb 8:00 a. m. - 3:00 p. m.",
+      "materiales_aceptados": [
+        1,
+        3,
+        4,
+        5,
+        7,
+        10
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 5,
+    "fields": {
+      "nombre": "Centro de Reciclaje San Ignacio",
+      "departamento": "Chalatenango",
+      "municipio": "San Ignacio",
+      "direccion": "Barrio El Centro, 1.ª Avenida Norte",
+      "telefono": "2335-3315",
+      "horario": "Lun a Vie 7:30 a. m. - 3:30 p. m.",
+      "materiales_aceptados": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 6,
+    "fields": {
+      "nombre": "EcoPunto Nueva Concepción",
+      "departamento": "Chalatenango",
+      "municipio": "Nueva Concepción",
+      "direccion": "Carretera Troncal del Norte, Barrio San José",
+      "telefono": "2335-9120",
+      "horario": "Lun a Sáb 7:00 a. m. - 5:00 p. m.",
+      "materiales_aceptados": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        9
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 7,
+    "fields": {
+      "nombre": "Punto de Acopio Tejutla",
+      "departamento": "Chalatenango",
+      "municipio": "Tejutla",
+      "direccion": "Barrio El Calvario, Calle Principal",
+      "telefono": "2335-4402",
+      "horario": "Lun a Vie 8:00 a. m. - 4:00 p. m.; Sáb 8:00 a. m. - 12:00 m.",
+      "materiales_aceptados": [
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 8,
+    "fields": {
+      "nombre": "Reciclaje Dulce Nombre de María",
+      "departamento": "Chalatenango",
+      "municipio": "Dulce Nombre de María",
+      "direccion": "Barrio San Antonio, 2.ª Calle Oriente",
+      "telefono": "2335-1127",
+      "horario": "Lun a Vie 8:00 a. m. - 3:00 p. m.",
+      "materiales_aceptados": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 9,
+    "fields": {
+      "nombre": "Ecocentro Arcatao",
+      "departamento": "Chalatenango",
+      "municipio": "Arcatao",
+      "direccion": "Barrio El Centro, contiguo a la Casa Comunal",
+      "telefono": "2335-9096",
+      "horario": "Mié y Vie 8:00 a. m. - 1:00 p. m.",
+      "materiales_aceptados": [
+        1,
+        2,
+        3,
+        10
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.puntoreciclaje",
+    "pk": 10,
+    "fields": {
+      "nombre": "Punto Verde Agua Caliente",
+      "departamento": "Chalatenango",
+      "municipio": "Agua Caliente",
+      "direccion": "Barrio El Calvario, a 100 metros del parque",
+      "telefono": "2335-7743",
+      "horario": "Lun a Vie 8:00 a. m. - 2:00 p. m.",
+      "materiales_aceptados": [
+        1,
+        2,
+        3,
+        7,
+        9
+      ],
+      "activo": true
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 1,
+    "fields": {
+      "perfil": 2,
+      "punto": 1,
+      "material": 1,
+      "cantidad_kg": "4.00",
+      "puntos_ganados": 60,
+      "fecha": "2026-09-12T10:15:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 2,
+    "fields": {
+      "perfil": 3,
+      "punto": 3,
+      "material": 3,
+      "cantidad_kg": "12.50",
+      "puntos_ganados": 100,
+      "fecha": "2026-09-28T09:20:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 3,
+    "fields": {
+      "perfil": 2,
+      "punto": 1,
+      "material": 7,
+      "cantidad_kg": "1.50",
+      "puntos_ganados": 60,
+      "fecha": "2026-10-03T09:40:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 4,
+    "fields": {
+      "perfil": 4,
+      "punto": 6,
+      "material": 7,
+      "cantidad_kg": "2.75",
+      "puntos_ganados": 110,
+      "fecha": "2026-10-10T10:20:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 5,
+    "fields": {
+      "perfil": 5,
+      "punto": 6,
+      "material": 2,
+      "cantidad_kg": "35.00",
+      "puntos_ganados": 420,
+      "fecha": "2026-10-19T09:30:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 6,
+    "fields": {
+      "perfil": 6,
+      "punto": 7,
+      "material": 3,
+      "cantidad_kg": "48.20",
+      "puntos_ganados": 385,
+      "fecha": "2026-10-22T10:05:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 7,
+    "fields": {
+      "perfil": 7,
+      "punto": 8,
+      "material": 5,
+      "cantidad_kg": "6.30",
+      "puntos_ganados": 37,
+      "fecha": "2026-10-29T09:50:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 8,
+    "fields": {
+      "perfil": 6,
+      "punto": 7,
+      "material": 4,
+      "cantidad_kg": "30.00",
+      "puntos_ganados": 150,
+      "fecha": "2026-11-05T10:30:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 9,
+    "fields": {
+      "perfil": 8,
+      "punto": 2,
+      "material": 1,
+      "cantidad_kg": "22.80",
+      "puntos_ganados": 342,
+      "fecha": "2026-11-09T08:45:00-06:00"
+    }
+  },
+  {
+    "model": "reciclaje.registroreciclaje",
+    "pk": 10,
+    "fields": {
+      "perfil": 9,
+      "punto": 3,
+      "material": 10,
+      "cantidad_kg": "120.00",
+      "puntos_ganados": 480,
+      "fecha": "2026-11-10T09:15:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 1,
+    "fields": {
+      "perfil": 2,
+      "punto": 1,
+      "tipo": "punto_lleno",
+      "titulo": "Contenedor de PET lleno en el Centro de Acopio",
+      "descripcion": "El contenedor de botellas plásticas lleva tres días sin vaciarse y ya hay bolsas en el suelo alrededor.",
+      "estado": "resuelto",
+      "fecha_creacion": "2026-10-06T08:15:00-06:00",
+      "fecha_resolucion": "2026-10-08T14:30:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 2,
+    "fields": {
+      "perfil": 3,
+      "punto": 3,
+      "tipo": "contenedor_danado",
+      "titulo": "Contenedor de vidrio con la tapa quebrada",
+      "descripcion": "La tapa del contenedor de vidrio está rota y le entra agua cuando llueve.",
+      "estado": "en_revision",
+      "fecha_creacion": "2026-10-14T17:40:00-06:00",
+      "fecha_resolucion": null
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 3,
+    "fields": {
+      "perfil": 4,
+      "punto": 6,
+      "tipo": "basura_acumulada",
+      "titulo": "Basura común junto a la entrada del EcoPunto",
+      "descripcion": "Dejan bolsas de basura común en la entrada del punto y se mezclan con el material para reciclar.",
+      "estado": "pendiente",
+      "fecha_creacion": "2026-10-21T09:25:00-06:00",
+      "fecha_resolucion": null
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 4,
+    "fields": {
+      "perfil": 6,
+      "punto": 7,
+      "tipo": "punto_lleno",
+      "titulo": "Bodega de cartón llena en el punto de Tejutla",
+      "descripcion": "El punto ya no recibe más cartón porque la bodega está llena. Hace falta que lo retiren para seguir trabajando.",
+      "estado": "resuelto",
+      "fecha_creacion": "2026-10-24T11:50:00-06:00",
+      "fecha_resolucion": "2026-10-27T15:45:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 5,
+    "fields": {
+      "perfil": 7,
+      "punto": 8,
+      "tipo": "sugerencia",
+      "titulo": "Atender también los sábados",
+      "descripcion": "Trabajo entre semana y no alcanzo a llegar a tiempo. Sería de gran ayuda que el punto abriera los sábados por la mañana.",
+      "estado": "pendiente",
+      "fecha_creacion": "2026-10-30T19:05:00-06:00",
+      "fecha_resolucion": null
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 6,
+    "fields": {
+      "perfil": 8,
+      "punto": 2,
+      "tipo": "contenedor_danado",
+      "titulo": "Contenedor de aluminio sin candado",
+      "descripcion": "El contenedor de latas no cierra bien y se perdió el candado; cualquiera puede llevarse el material.",
+      "estado": "en_revision",
+      "fecha_creacion": "2026-11-02T14:10:00-06:00",
+      "fecha_resolucion": null
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 7,
+    "fields": {
+      "perfil": 9,
+      "punto": 3,
+      "tipo": "sugerencia",
+      "titulo": "Rótulos con los materiales aceptados",
+      "descripcion": "Sería bueno colocar rótulos grandes en la entrada con los materiales que se reciben, para que la gente llegue con todo bien separado.",
+      "estado": "resuelto",
+      "fecha_creacion": "2026-11-06T16:35:00-06:00",
+      "fecha_resolucion": "2026-11-09T11:00:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 8,
+    "fields": {
+      "perfil": 10,
+      "punto": 5,
+      "tipo": "basura_acumulada",
+      "titulo": "Bolsas abandonadas frente al punto de San Ignacio",
+      "descripcion": "Desde el fin de semana hay bolsas de basura tiradas en la calle frente al punto y ya huele mal.",
+      "estado": "pendiente",
+      "fecha_creacion": "2026-11-09T07:50:00-06:00",
+      "fecha_resolucion": null
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 9,
+    "fields": {
+      "perfil": 3,
+      "punto": null,
+      "tipo": "sugerencia",
+      "titulo": "Jornada de acopio en las fiestas patronales",
+      "descripcion": "Propongo instalar un punto de acopio temporal durante las fiestas patronales, que es cuando más botellas y latas se generan.",
+      "estado": "pendiente",
+      "fecha_creacion": "2026-11-11T20:15:00-06:00",
+      "fecha_resolucion": null
+    }
+  },
+  {
+    "model": "reportes.reporte",
+    "pk": 10,
+    "fields": {
+      "perfil": 5,
+      "punto": 6,
+      "tipo": "punto_lleno",
+      "titulo": "Contenedor de HDPE al límite de capacidad",
+      "descripcion": "Con el volumen de esta semana el contenedor de envases HDPE se llena en dos días. Solicitamos vaciados más frecuentes.",
+      "estado": "en_revision",
+      "fecha_creacion": "2026-11-12T09:30:00-06:00",
+      "fecha_resolucion": null
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 1,
+    "fields": {
+      "reporte": 1,
+      "autor": 1,
+      "comentario": "Recibimos tu aviso. Ya coordinamos con el centro de acopio para vaciar el contenedor de PET.",
+      "fecha": "2026-10-06T10:05:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 2,
+    "fields": {
+      "reporte": 1,
+      "autor": 2,
+      "comentario": "Confirmo que ya lo vaciaron esta mañana. ¡Gracias por la rapidez!",
+      "fecha": "2026-10-08T13:50:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 3,
+    "fields": {
+      "reporte": 2,
+      "autor": 1,
+      "comentario": "Estamos revisando el contenedor de vidrio. Se solicitó una tapa de repuesto al proveedor.",
+      "fecha": "2026-10-15T09:20:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 4,
+    "fields": {
+      "reporte": 2,
+      "autor": 3,
+      "comentario": "Con las lluvias de esta semana se mojó el vidrio. Avisen cuando llegue la tapa, por favor.",
+      "fecha": "2026-10-17T18:10:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 5,
+    "fields": {
+      "reporte": 4,
+      "autor": 1,
+      "comentario": "Gracias por avisar, José. Programamos el retiro del cartón con la ruta de recolección de esta semana.",
+      "fecha": "2026-10-26T08:40:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 6,
+    "fields": {
+      "reporte": 4,
+      "autor": 6,
+      "comentario": "Pasaron esta mañana y retiraron todo el cartón. Ya hay espacio en la bodega.",
+      "fecha": "2026-10-27T12:15:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 7,
+    "fields": {
+      "reporte": 6,
+      "autor": 1,
+      "comentario": "Reporte en revisión. El encargado del punto instalará un candado nuevo esta semana.",
+      "fecha": "2026-11-03T10:30:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 8,
+    "fields": {
+      "reporte": 7,
+      "autor": 1,
+      "comentario": "Buena idea. Pedimos imprimir rótulos con los materiales aceptados para el Punto Limpio La Palma.",
+      "fecha": "2026-11-06T17:05:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 9,
+    "fields": {
+      "reporte": 7,
+      "autor": 9,
+      "comentario": "Ya vimos los rótulos instalados en la entrada. Muchas gracias.",
+      "fecha": "2026-11-09T08:20:00-06:00"
+    }
+  },
+  {
+    "model": "reportes.seguimientoreporte",
+    "pk": 10,
+    "fields": {
+      "reporte": 10,
+      "autor": 1,
+      "comentario": "Estamos programando un vaciado adicional del contenedor de HDPE a mitad de semana.",
+      "fecha": "2026-11-12T15:30:00-06:00"
+    }
+  }
+]

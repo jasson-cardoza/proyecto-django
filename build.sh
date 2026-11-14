@@ -21,3 +21,10 @@ fi
 
 # Crear el superusuario con las variables DJANGO_SUPERUSER_* (si ya existe, no pasa nada)
 python manage.py createsuperuser --noinput || true
+
+# Cargar datos de ejemplo solo si la base todavía no tiene perfiles
+if python manage.py shell -c "import sys; from usuarios.models import Perfil; sys.exit(0 if Perfil.objects.exists() else 1)"; then
+  echo ">>> Ya hay perfiles en la base: no se cargan los datos de ejemplo"
+else
+  python manage.py loaddata datos_chalatenango.json
+fi
