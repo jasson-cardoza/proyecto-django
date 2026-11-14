@@ -18,3 +18,6 @@ if [ -z "$DATABASE_URL" ]; then
 else
   echo ">>> DATABASE_URL sí está definida"
 fi
+
+# Crear el superusuario con las variables DJANGO_SUPERUSER_* (si ya existe, no pasa nada)
+python manage.py createsuperuser --noinput || true
